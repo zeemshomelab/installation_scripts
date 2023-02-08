@@ -16,6 +16,7 @@ sudo chmod 666 /var/run/docker.sock
 echo "Apply updates"
 sudo apt update -y 
 sudo apt upgrade -y
+sudo swapoff -a
 
 echo " Download Minikube Binary"
 wget https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
