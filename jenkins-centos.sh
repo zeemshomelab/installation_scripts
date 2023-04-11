@@ -1,17 +1,26 @@
 ## Install and Configure Jenkins Server on CentOS 7
 
+#!/bin/bash
+## Install and Configure Jenkins Server on CentOS 7
+
+
 sudo yum -y install epel-release
 
-sudo yum -y install java-11-openjdk
+sudo wget -O /etc/yum.repos.d/jenkins.repo \
+    https://pkg.jenkins.io/redhat-stable/jenkins.repo
 
-java -version
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
 
-sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+sudo yum upgrade
 
-sudo yum -y install wget
-sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+# Add required dependencies for the jenkins package
 
-sudo yum -y install jenkins
+sudo yum install java-11-openjdk
+
+sudo yum install jenkins
+
+sudo systemctl daemon-reload
+
 
 sudo systemctl start jenkins
 
