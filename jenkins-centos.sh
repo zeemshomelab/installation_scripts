@@ -1,6 +1,3 @@
-
-
-
 ## Install and Configure Jenkins Server on CentOS 7
 
 sudo yum -y install epel-release
