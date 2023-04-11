@@ -29,4 +29,11 @@ sudo useradd -s /sbin/nologin --system -g jenkins jenkins
 
 sudo usermod -aG docker jenkins
 
+sudo usermod -aG docker serveradmin
+
+sudo systemctl restart docker
+
+sudo systemctl restart jenkins
+
+
 ### https://computingforgeeks.com/running-jenkins-server-in-docker-container-systemd/#### Try this later
