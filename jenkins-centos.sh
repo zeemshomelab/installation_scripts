@@ -1,4 +1,6 @@
 
+
+
 ## Install and Configure Jenkins Server on CentOS 7
 
 sudo yum -y install epel-release
@@ -24,3 +26,10 @@ sudo ss -tunelp | grep 8080
 
 cat /var/lib/jenkins/secrets/initialAdminPassword
 
+sudo groupadd --system jenkins
+
+sudo useradd -s /sbin/nologin --system -g jenkins jenkins
+
+sudo usermod -aG docker jenkins
+
+### https://computingforgeeks.com/running-jenkins-server-in-docker-container-systemd/#### Try this later
